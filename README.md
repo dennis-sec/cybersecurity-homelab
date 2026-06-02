@@ -16,7 +16,7 @@ I wanted a realistic environment to practice both sides — defending a network 
 
 ```mermaid
 flowchart TD
-  INT([Internet]) --> BT["BT Smart Hub 6<br/>192.168.1.254 — home router"]
+  INT([Internet]) --> BT["BT Smart Hub 6 <br/>192.168.1.254 — home router"]
   BT -->|Powerline Ethernet| PVE["Proxmox host — Lenovo M920s<br/>192.168.1.50"]
   PVE --> PF["pfSense firewall VM<br/>WAN 192.168.1.181 · LAN 10.10.10.1<br/>+ Suricata IDS · WireGuard VPN"]
   PF --> SW["vmbr1 — isolated lab network<br/>10.10.10.0/24"]
