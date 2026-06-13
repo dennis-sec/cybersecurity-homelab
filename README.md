@@ -23,7 +23,7 @@ flowchart TD
   SW --> KALI["Kali Linux<br/>attacker · 10.10.10.100"]
   SW --> PIH["Pi-hole<br/>DNS filtering · 10.10.10.10"]
   SW --> MEDIA["Jellyfin + *arr stack<br/>self-hosted services"]
-  PHONE["Phone via cellular"] -. WireGuard VPN — 10.6.210.0/24 .-> PF
+  PHONE["Phone via cellular"] -.->|"WireGuard VPN 10.6.210.0/24"| PF
 ```
 
 The home router hands off to pfSense's WAN, and pfSense firewalls and NATs the isolated `10.10.10.0/24` lab (so it's effectively double-NAT). A default-deny rule stops the lab reaching my home network — I confirmed it by pinging my home gateway from Kali and watching it fail 100% while internet access still worked.
