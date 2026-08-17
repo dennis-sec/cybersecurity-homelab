@@ -126,6 +126,7 @@ The headline conclusion is the kind of thing the whole lab was built to produce:
 
 - **Network-only visibility on the target.** There's no host agent on DC-1 (a modern Wazuh agent won't run on Debian 7), which is the direct cause of the host-level blind spot documented in Phase 11. Agentless syslog forwarding from the target would close it — recorded as an enhancement.
 - **The Proxmox host sits on my home network**, not behind pfSense — normal for a single-box lab, but I'd move pfSense to its own hardware to gate the whole house.
+- **Single-operator setup with root auto-login**; proper auth hardening (2FA, `fail2ban`, a non-root admin, backups) is the next area of work.
 - **Suricata runs on the firewall**, which is clean for placement but limits how richly the SIEM can decode its alerts compared to a dedicated sensor host — a documented trade-off.
 
 ## Repo contents
